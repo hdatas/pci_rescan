@@ -78,5 +78,7 @@ pci_exit_module(void)
 
 module_init(pci_init_module);
 module_exit(pci_exit_module);
-MODULE_AUTHOR("Krishna Mohan");
+MODULE_AUTHOR("Krishna Mohan <krishna@hcdatainc.com>");
+MODULE_LICENSE("GPL");
+MODULE_VERSION("0.1");
 MODULE_LICENSE("GPL");
