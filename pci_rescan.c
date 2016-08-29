@@ -9,7 +9,7 @@
 
 /*
  * kthread_create: will create a new task_struct with no process address space
- * 		queue it in workqueue for scheduler to invoke it.
+ *		queue it in workqueue for scheduler to invoke it.
  * kernel_thread: forks a new process with distinct new task_struct.
  */
 
@@ -23,14 +23,13 @@ typedef struct pci_rescan {
 	struct	file *pcifd;
 } pci_rescan_t;
 
-#define PCI_SCAN_FILE	"/sys/bus/pci/rescan"
-
 pci_rescan_t scan_info;
 
 static void
 do_pci_scan(void)
 {
   struct pci_bus *b = NULL;
+
   pci_lock_rescan_remove();
 
   while ((b = pci_find_next_bus(b)) != NULL) {
