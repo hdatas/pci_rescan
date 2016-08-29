@@ -53,7 +53,6 @@ pci_write(struct file *file, unsigned long long offset, unsigned char *data, uns
 	ret = vfs_write(file, data, size, &pos);
 	// or ret = file->f_op->write(file, data, size, &pos);
 	set_fs(old_fs);
-	printk("pci write %d %d ret %d\n", *data, size, ret);
 	return (ret);
 }
 
