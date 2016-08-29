@@ -70,6 +70,10 @@ perform_pci_rescan(void *data)
 	}
 	while (!kthread_should_stop()) {
 		ssleep(5);
+    /*
+     * Need to write a string value to perform pci-rescan.
+     * bus_rescan_store() does kstrtoul().
+     */
 		pci_write(scan_info.pcifd, 0, val, strlen(val));
 	}
 	return (0);
