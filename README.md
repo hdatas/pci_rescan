@@ -1,4 +1,4 @@
-# pci_rescan
+### Instruction for pci_rescan module
 
 ```
   make
